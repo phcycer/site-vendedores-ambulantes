@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tecnologia, redes sociais e o futuro do comércio ambulante: uma pesquisa sobre inovação, oportunidades e desafios.">
+<title>Comércio Ambulante | Tecnologia e Futuro</title>
+<style>
+:root{
+  --roxo:#5b2a86;--roxo-escuro:#241331;--laranja:#ef7d24;
+  --texto:#24212a;--suave:#f6f3f8;--branco:#fff;--cinza:#6b6670;
+  --borda:#e7e0ec;--sombra:0 12px 32px rgba(36,19,49,.09);
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--texto);line-height:1.65;background:#fff}
+a{color:inherit}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--borda)}
+.nav-wrap{max-width:1160px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;color:var(--roxo-escuro);letter-spacing:-.4px}
+.brand-mark{width:38px;height:38px;border-radius:11px;background:var(--roxo);display:grid;place-items:center;color:#fff;font-size:17px}
+nav{display:flex;align-items:center;gap:17px;flex-wrap:wrap}
+nav a{font-size:.88rem;font-weight:700;text-decoration:none;color:#514958}
+nav a:hover,nav a:focus{color:var(--roxo)}
+.menu-btn{display:none;background:var(--roxo);color:#fff;border:0;border-radius:8px;padding:9px 12px;font-weight:bold}
+.hero{background:linear-gradient(120deg,#241331 0%,#4d2671 62%,#6b368f 100%);color:#fff;overflow:hidden}
+.hero-inner{max-width:1160px;margin:auto;padding:76px 22px 70px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:44px}
+.eyebrow{color:#ffbf82;font-size:.82rem;text-transform:uppercase;letter-spacing:2px;font-weight:800}
+h1{font-size:clamp(2.35rem,5vw,4.35rem);line-height:1.06;letter-spacing:-1.8px;margin:15px 0 20px}
+.hero p{font-size:1.08rem;color:#eee5f5;max-width:640px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+.btn{display:inline-block;text-decoration:none;border-radius:9px;padding:12px 17px;font-weight:800;border:2px solid transparent}
+.btn-primary{background:var(--laranja);color:#241331}
+.btn-secondary{border-color:#bba5ce;color:#fff}
+.hero-photo{position:relative}
+.hero-photo img{width:100%;height:310px;object-fit:cover;border-radius:18px;border:5px solid rgba(255,255,255,.12);box-shadow:0 20px 45px #160c20}
+.photo-note{font-size:.78rem;color:#e3d7ed;margin-top:8px;text-align:right}
+.quick{max-width:1160px;margin:-28px auto 0;padding:0 22px;position:relative;z-index:2}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.quick-card{background:#fff;padding:18px;border:1px solid var(--borda);border-radius:13px;box-shadow:var(--sombra);text-decoration:none;transition:transform .2s}
+.quick-card:hover{transform:translateY(-3px)}
+.quick-card strong{display:block;color:var(--roxo);font-size:1rem;margin-bottom:3px}
+.quick-card span{font-size:.83rem;color:var(--cinza)}
+main{max-width:1160px;margin:auto;padding:52px 22px 70px}
+section{scroll-margin-top:92px;margin-bottom:64px}
+.section-head{max-width:760px;margin-bottom:25px}
+.kicker{color:var(--laranja);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:.78rem}
+h2{font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.15;color:var(--roxo-escuro);margin:8px 0 13px;letter-spacing:-.7px}
+.lead{font-size:1.05rem;color:#5e5863}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.text-panel{padding:25px;border-radius:15px;background:var(--suave);border:1px solid var(--borda)}
+.text-panel p:first-child{margin-top:0}
+figure{margin:0}
+figure img{display:block;width:100%;height:245px;object-fit:cover;border-radius:14px}
+figcaption{font-size:.8rem;color:var(--cinza);margin-top:8px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border:1px solid var(--borda);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 5px 20px rgba(36,19,49,.04)}
+.card img{display:block;width:100%;height:165px;object-fit:cover}
+.card-content{padding:18px}
+.card h3{color:var(--roxo);margin:0 0 8px;font-size:1.12rem}
+.card p{margin:0;color:#5c5661;font-size:.94rem}
+.pill{display:inline-block;background:#fce8d8;color:#83410e;border-radius:5px;padding:3px 8px;font-size:.74rem;font-weight:800;margin-bottom:9px}
+.callout{background:#fff7f0;border-left:5px solid var(--laranja);padding:20px 22px;border-radius:0 12px 12px 0;margin-top:22px}
+.callout strong{color:var(--roxo-escuro)}
+.challenge-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.challenge{border:1px solid var(--borda);border-radius:12px;padding:18px 20px}
+.challenge h3{margin:0 0 6px;color:var(--roxo)}
+.challenge p{margin:0;color:#5c5661}
+.future{background:var(--roxo-escuro);color:#fff;border-radius:18px;padding:32px}
+.future h2{color:#fff}
+.future p{color:#e6ddeb}
+.future-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.future-item{padding:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px}
+.future-item h3{margin:0 0 7px;color:#ffbf82;font-size:1.05rem}
+.future-item p{font-size:.9rem;margin:0}
+.references{background:var(--suave);border-radius:15px;padding:25px}
+.references ol{padding-left:22px}
+.references li{margin:0 0 15px;padding-left:4px}
+.references a{color:var(--roxo);overflow-wrap:anywhere;font-weight:700}
+.references small{display:block;color:var(--cinza);margin-top:3px}
+footer{background:#1c1025;color:#ddd2e7;padding:27px 22px;text-align:center;font-size:.88rem}
+footer strong{color:#fff}
+.top-link{position:fixed;right:18px;bottom:18px;background:var(--laranja);color:#241331;text-decoration:none;font-weight:900;padding:10px 13px;border-radius:9px;box-shadow:var(--sombra);display:none;z-index:10}
+.top-link.show{display:block}
+@media(max-width:850px){
+ .hero-inner{grid-template-columns:1fr;padding-top:52px}
+ .hero-photo img{height:260px}
+ .quick-grid{grid-template-columns:repeat(2,1fr)}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .two-col{gap:18px}
+ nav{gap:10px}
+ nav a{font-size:.8rem}
+}
+@media(max-width:620px){
+ .nav-wrap{padding:11px 16px;flex-wrap:wrap}
+ .menu-btn{display:block}
+ nav{display:none;width:100%;flex-direction:column;align-items:stretch;padding:8px 0 4px}
+ nav.open{display:flex}
+ nav a{padding:8px 5px;border-bottom:1px solid var(--borda);font-size:.92rem}
+ .hero-inner{padding:42px 18px 55px;gap:25px}
+ h1{font-size:2.5rem}
+ .quick{padding:0 15px}
+ .quick-grid{gap:8px}
+ .quick-card{padding:13px}
+ main{padding:42px 17px}
+ .two-col,.cards,.challenge-grid,.future-grid{grid-template-columns:1fr}
+ .two-col figure{order:-1}
+ figure img{height:220px}
+ .card img{height:190px}
+ .future{padding:23px}
+ section{margin-bottom:50px}
+}
+</style>
+</head>
+<body id="topo">
+<header>
+  <div class="nav-wrap">
+    <a class="brand" href="#topo" aria-label="Página inicial">
+      <span class="brand-mark">CA</span><span>Comércio Ambulante<br><small style="font-weight:500;color:#766b7d">Tecnologia e futuro</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" aria-label="Navegação principal">
+      <a href="#introducao">Introdução</a>
+      <a href="#tecnologia">Tecnologia</a>
+      <a href="#redes">Redes sociais</a>
+      <a href="#desafios">Desafios</a>
+      <a href="#futuro">Futuro</a>
+      <a href="#referencias">Referências</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="titulo-principal">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Pesquisa · Feira Multicultural</div>
+      <h1 id="titulo-principal">Tecnologia, redes sociais e o futuro do comércio ambulante</h1>
+      <p>Como ferramentas digitais podem ampliar as oportunidades de quem trabalha nas ruas, aproximar vendedores e clientes e transformar a maneira de vender.</p>
+    </div>
+    <div class="hero-photo">
+      <img src="https://images.unsplash.com/photo-1556740452-7e1f1c8e9e8f?auto=format&fit=crop&w=1000&q=80" alt="Pessoa realizando um pagamento digital em um pequeno comércio" onerror="this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=80'">
+      <div class="photo-note">Tecnologia como apoio ao comércio local</div>
+    </div>
+  </div>
+</section>
+
+<div class="quick" aria-label="Acesso rápido às informações">
+  <div class="quick-grid">
+    <a class="quick-card" href="#tecnologia"><strong>01 · Tecnologia</strong><span>Pagamentos e organização das vendas</span></a>
+    <a class="quick-card" href="#redes"><strong>02 · Redes sociais</strong><span>Divulgação e relacionamento com clientes</span></a>
+    <a class="quick-card" href="#desafios"><strong>03 · Desafios</strong><span>Obstáculos e caminhos possíveis</span></a>
+    <a class="quick-card" href="#futuro"><strong>04 · Futuro</strong><span>Inovação com inclusão</span></a>
+  </div>
+</div>
+
+<main>
+  <section id="introducao">
+    <div class="section-head">
+      <div class="kicker">Contexto da pesquisa</div>
+      <h2>Por que falar sobre comércio ambulante?</h2>
+      <p class="lead">Os vendedores ambulantes fazem parte da economia das cidades: oferecem produtos e serviços em locais movimentados, atendem diferentes públicos e representam uma fonte de renda para muitas famílias.</p>
+    </div>
+    <div class="two-col">
+      <div class="text-panel">
+        <p>Apesar de sua importância, esses trabalhadores podem enfrentar renda instável, concorrência, dificuldades de acesso a crédito, infraestrutura limitada e obstáculos para formalizar o negócio.</p>
+        <p>A tecnologia não resolve todos esses problemas, mas pode oferecer ferramentas acessíveis para facilitar pagamentos, organizar informações, divulgar produtos e manter contato com os consumidores.</p>
+        <p><strong>Objetivo:</strong> compreender como a tecnologia e as redes sociais podem apoiar o trabalho dos vendedores ambulantes e quais cuidados são necessários para que essa transformação seja inclusiva.</p>
+      </div>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=900&q=80" alt="Banca de produtos em um ambiente de comércio" loading="lazy">
+        <figcaption>O comércio de rua aproxima produtos, trabalhadores e consumidores.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="tecnologia">
+    <div class="section-head">
+      <div class="kicker">Vendas no dia a dia</div>
+      <h2>Como a tecnologia pode ajudar?</h2>
+      <p class="lead">Ferramentas simples podem tornar algumas etapas da venda mais rápidas e organizadas. A escolha depende da realidade, dos custos e das necessidades de cada trabalhador.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=700&q=80" alt="Pagamento realizado por meio eletrônico" loading="lazy">
+        <div class="card-content"><span class="pill">Pagamentos</span><h3>Pix e cartão</h3><p>Oferecem alternativas ao dinheiro em espécie e podem facilitar a compra. É importante conferir o recebimento no próprio aplicativo e observar taxas e custos.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=700&q=80" alt="Celular usado para acessar aplicativos" loading="lazy">
+        <div class="card-content"><span class="pill">Organização</span><h3>Celulares e aplicativos</h3><p>Podem ajudar a anotar pedidos, controlar entradas e saídas, calcular despesas e manter uma lista de produtos e preços.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=700&q=80" alt="Atendimento ao cliente em um pequeno negócio" loading="lazy">
+        <div class="card-content"><span class="pill">Atendimento</span><h3>Catálogos digitais</h3><p>Fotos, listas de produtos e mensagens permitem apresentar opções antes da compra e responder dúvidas sem depender apenas do atendimento presencial.</p></div>
+      </article>
+    </div>
+    <div class="callout"><strong>Um cuidado importante:</strong> o uso de ferramentas digitais deve considerar a segurança dos dados, a conexão com a internet, o custo dos equipamentos e a facilidade de uso. A tecnologia deve servir ao vendedor, e não criar mais uma barreira.</div>
+  </section>
+
+  <section id="redes">
+    <div class="section-head">
+      <div class="kicker">Presença digital</div>
+      <h2>Redes sociais: uma vitrine que vai além da rua</h2>
+      <p class="lead">WhatsApp, Instagram, Facebook e outras plataformas podem ajudar o vendedor a mostrar o que oferece, informar onde estará e criar relacionamento com clientes.</p>
+    </div>
+    <div class="two-col">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=900&q=80" alt="Pessoa utilizando redes sociais em um celular" loading="lazy">
+        <figcaption>Publicações claras e frequentes ajudam o público a conhecer o negócio.</figcaption>
+      </figure>
+      <div>
+        <div class="challenge">
+          <h3>Mostrar produtos e preços</h3>
+          <p>Fotografias bem iluminadas, descrições objetivas e informações atualizadas ajudam o cliente a entender o que está disponível.</p>
+        </div>
+        <div class="challenge" style="margin-top:12px">
+          <h3>Informar localização e horário</h3>
+          <p>Publicar onde a barraca estará e em quais horários pode facilitar que clientes encontrem o vendedor.</p>
+        </div>
+        <div class="challenge" style="margin-top:12px">
+          <h3>Manter o relacionamento</h3>
+          <p>Responder com educação, ouvir sugestões e divulgar novidades ajuda a construir confiança e incentivar o retorno dos clientes.</p>
+        </div>
+      </div>
+    </div>
+    <div class="callout"><strong>Dica prática:</strong> não é necessário estar em todas as redes. É melhor escolher os canais que os clientes realmente usam, manter as informações corretas e publicar com regularidade.</div>
+  </section>
+
+  <section id="desafios">
+    <div class="section-head">
+      <div class="kicker">Resultados e discussão</div>
+      <h2>Oportunidades e desafios caminham juntos</h2>
+      <p class="lead">A digitalização pode ampliar o alcance de um negócio, mas o acesso às ferramentas e a capacidade de usá-las variam de pessoa para pessoa.</p>
+    </div>
+    <div class="challenge-grid">
+      <article class="challenge"><h3>Renda instável</h3><p>O movimento pode mudar conforme o clima, a localização, a época do ano e as condições econômicas.</p></article>
+      <article class="challenge"><h3>Custos e acesso</h3><p>Internet, equipamentos, tarifas e manutenção podem pesar no orçamento de quem trabalha por conta própria.</p></article>
+      <article class="challenge"><h3>Concorrência e regras</h3><p>É importante conhecer as regras locais de ocupação do espaço público e buscar informações sobre formalização.</p></article>
+      <article class="challenge"><h3>Segurança digital</h3><p>Golpes, comprovantes falsos e exposição indevida de dados exigem atenção e hábitos seguros.</p></article>
+    </div>
+    <div class="two-col" style="margin-top:25px">
+      <div>
+        <h3 style="color:var(--roxo)">Estratégias possíveis</h3>
+        <ul>
+          <li>Registrar vendas e despesas para acompanhar o resultado do negócio.</li>
+          <li>Usar pagamentos digitais sem abandonar outras opções para clientes.</li>
+          <li>Divulgar produtos com informações verdadeiras e preços claros.</li>
+          <li>Buscar orientação sobre formalização e capacitação para pequenos negócios.</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80" alt="Pessoas trabalhando juntas e compartilhando ideias" loading="lazy">
+        <figcaption>Orientação, capacitação e apoio local também contribuem para o desenvolvimento.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="futuro">
+    <div class="future">
+      <div class="kicker">Perspectivas</div>
+      <h2>Qual pode ser o futuro do comércio ambulante?</h2>
+      <p>O futuro não depende apenas de novas tecnologias. Ele também envolve condições dignas de trabalho, acesso à informação e respeito à importância econômica e social desses profissionais.</p>
+      <div class="future-grid">
+        <div class="future-item"><h3>Mais integração digital</h3><p>Pagamentos eletrônicos, catálogos e redes sociais podem funcionar em conjunto com a venda presencial.</p></div>
+        <div class="future-item"><h3>Uso responsável de dados</h3><p>Ferramentas simples podem ajudar a entender os produtos mais procurados e planejar o estoque, sem expor informações pessoais.</p></div>
+        <div class="future-item"><h3>Inovação com inclusão</h3><p>Capacitação, acesso à internet e soluções de baixo custo podem ampliar as oportunidades para diferentes trabalhadores.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="conclusao">
+    <div class="section-head">
+      <div class="kicker">Considerações finais</div>
+      <h2>A tecnologia deve fortalecer as pessoas</h2>
+      <p class="lead">O comércio ambulante tem relevância econômica e social. Pix, máquinas de cartão, celulares e redes sociais podem facilitar tarefas, ampliar a divulgação e aproximar vendedores e consumidores. Porém, seus benefícios dependem do acesso, da segurança e do uso consciente dessas ferramentas.</p>
+      <p>Investir em capacitação e criar oportunidades de inclusão digital pode ajudar os vendedores ambulantes a acompanhar as mudanças sem perder o valor do atendimento humano, da experiência e da relação de confiança com os clientes.</p>
+    </div>
+  </section>
+
+  <section id="referencias">
+    <div class="section-head">
+      <div class="kicker">Fontes consultadas</div>
+      <h2>Referências</h2>
+      <p class="lead">Materiais indicados para aprofundar a pesquisa. Os links abrem em uma nova aba.</p>
+    </div>
+    <div class="references">
+      <ol>
+        <li><strong>Sebrae Santa Catarina.</strong> <a href="https://www.sebrae-sc.com.br/blog/importancia-do-uso-das-redes-sociais-para-impulsionar-a-venda-de-produtos-e-servicos" target="_blank" rel="noopener noreferrer">Importância do uso das redes sociais para impulsionar a venda de produtos e serviços.</a><small>Conteúdo sobre redes sociais, divulgação e relacionamento com clientes.</small></li>
+        <li><strong>Vecchio CRM.</strong> <a href="https://www.vecchiocrm.com.br/post/como-a-tecnologia-est%C3%A1-transformando-o-trabalho-dos-vendedores" target="_blank" rel="noopener noreferrer">Como a tecnologia está transformando o trabalho dos vendedores.</a><small>Reflexões sobre tecnologia, automação e a importância do atendimento humano.</small></li>
+        <li><strong>Cidade Conecta.</strong> <a href="https://www.cidadeconecta.com/noticias/mercado-autonomo-e-aposta-certa-para-2026/" target="_blank" rel="noopener noreferrer">Mercado autônomo é aposta certa para 2026.</a><small>Exemplo de tendências de tecnologia e conveniência no varejo; trata do mercado autônomo, não especificamente de vendedores ambulantes.</small></li>
+      </ol>
+      <p style="font-size:.82rem;color:var(--cinza);margin-bottom:0">Imagens ilustrativas: Unsplash. O conteúdo deste site é uma síntese informativa elaborada a partir do tema da pesquisa e das referências listadas.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <strong>Tecnologia, Redes Sociais e o Futuro do Comércio Ambulante</strong><br>
+  Projeto de pesquisa · Feira Multicultural · <span id="ano"></span>
+</footer>
+<a href="#topo" class="top-link" id="topLink" aria-label="Voltar ao início">Voltar ao topo</a>
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const menu = document.getElementById('menu');
+menuBtn.addEventListener('click', () => {
+  const aberto = menu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(aberto));
+  menuBtn.textContent = aberto ? 'Fechar menu' : 'Menu';
+});
+menu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.textContent = 'Menu';
+  });
+});
+const topLink = document.getElementById('topLink');
+window.addEventListener('scroll', () => {
+  topLink.classList.toggle('show', window.scrollY > 450);
+});
+document.getElementById('ano').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
